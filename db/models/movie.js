@@ -25,6 +25,9 @@ module.exports = (sequelize, DataTypes) => {
       sequelize,
       modelName: "Movie",
       underscored: true,
+      createdAt: "created_at",
+      updatedAt: "updated_at",
+      deletedAt: "deleted_at",
     }
   );
   return Movie;
