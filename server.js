@@ -9,6 +9,13 @@ app.get("/", (req, res) => {
 
 app.use(router);
 
+app.use((err, req, res, next) => {
+  res.json({
+    success: false,
+    message: err.message,
+  });
+});
+
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
